@@ -18,8 +18,12 @@ public class Runner {
     @Column(name="apellido")
     private String apellido;
 
+    @Column(name="email")
+    private String email;
+
+
     @Column(name="dni")
-    private long dni;
+    private int dni;
 
     @Column(name="tiempo")
     private String tiempo;
@@ -52,11 +56,19 @@ public class Runner {
         this.apellido = apellido;
     }
 
-    public long getDni() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getDni() {
         return dni;
     }
 
-    public void setDni(long dni) {
+    public void setDni(int dni) {
         this.dni = dni;
     }
 
@@ -67,6 +79,7 @@ public class Runner {
     public void setTiempo(String tiempo) {
         this.tiempo = tiempo;
     }
+
 
     @Override
     public String toString() {

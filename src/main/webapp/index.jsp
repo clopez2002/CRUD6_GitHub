@@ -5,6 +5,6 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-    <a href="/Servlet">click to continue</a>
+<% response.sendRedirect("runnersURL/runnersListURL"); %>
 </body>
 </html>
