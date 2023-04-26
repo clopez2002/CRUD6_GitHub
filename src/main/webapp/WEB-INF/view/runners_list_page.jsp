@@ -41,7 +41,7 @@
 
                 <c:url var="linkUpdateRunner" value="/runnersURL/showUpdateURL"> <!-- a esta url le tenemos que pasar el id -->
 
-                    <c:param name="runnerID" value="${runnersTEMP.id}"/>
+                    <c:param name="runnerIDParam" value="${runnersTEMP.id}"/>
                 </c:url>
 
                 <tr>

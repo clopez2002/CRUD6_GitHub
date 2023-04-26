@@ -61,6 +61,27 @@ public class Controller {
 
 /*****************************************************************************/
 
+    @GetMapping("/showUpdateURL")
+    public String showUpdateRunnerForm (@RequestParam("runnerIDParam") int id, Model theModel){
+
+        // obtener runner cuyo parametro es el id que le pasamos
+
+        Runner theRunner = daoClient.getOneRunner(id);
+
+        // establecer el runner como atributo del modelo
+
+        theModel.addAttribute("runnerAttributeToUpdate", theRunner);
+
+        // enviarlo al formuario
+
+        return "update_runners_page";
+    }
+
+/*****************************************************************************/
+
+
+/*****************************************************************************/
+
 /*****************************************************************************/
 
 
