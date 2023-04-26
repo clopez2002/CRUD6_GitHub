@@ -36,13 +36,28 @@ public class Controller {
 /*****************************************************************************/
 
     @RequestMapping("/insertRunnerURL")
-    public String showAddRunnerForm (Model theModel){
+    public String showInsertRunnerForm (Model theModel){
 
+        // Bind de datos de los clientes
+
+        Runner theRunner = new Runner();
+
+        theModel.addAttribute("runnersAttributeToInsert", theRunner);
 
         return "insert_runners_page"; // este es el archivo JSP que debe devolver
     }
 
 /*****************************************************************************/
+
+    @PostMapping("/InsertRunnerInsert")
+    public String insertRunnerMethod (@ModelAttribute("runnersAttributeToInsert") Runner theRunner){
+
+        // insertar runner en la BBDD
+
+        daoClient.insertRunner (theRunner);
+
+        return "redirect:/runnersURL/runnersListURL";
+    }
 
 /*****************************************************************************/
 
