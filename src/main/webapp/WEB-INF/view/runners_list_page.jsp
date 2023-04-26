@@ -10,21 +10,25 @@
 <html>
 <head>
     <title>Title</title>
+
+    <!-- aca le indicamos donde estan los resources -->
+
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/estilos.css"  />
+
+
 </head>
 <body>
 
-    <table>
+    <h1>Runners List</h1>
+
+    <table border="1"> <!-- Crea un marco para la lista, asi se ve mas prolijo-->
 
         <tr>
 
             <th>Nombre</th>
-
             <th>Apellido</th>
-
             <th>Mail</th>
-
             <th>DNI</th>
-
             <th>Tiempo</th>
 
 
@@ -43,11 +47,15 @@
 
                 </tr>
 
-
-
             </c:forEach>
 
     </table>
+
+    <br/>
+
+    <!-- La siguiente linea construye un boton, y nos indica el archivo donde se vana insertar los nuevos corredores-->
+
+    <input type="button" value="Insert Runner" onclick="window.location.href='insertRunnerURL'; return false"/> <!-- redirigirnos a la pagina jsp con el formulario -->
 
 </body>
 </html>

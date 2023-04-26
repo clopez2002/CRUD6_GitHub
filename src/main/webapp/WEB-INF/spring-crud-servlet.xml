@@ -63,6 +63,10 @@
     <!-- Habilitar configuración de transacciones basadas en anotaciones -->
 	<tx:annotation-driven transaction-manager="miTransactionManager" />
 
+	<!-- aca agregamos donde estan los recursos css, videos, imagenes etc -->
+
+	<mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>
+
 </beans>
 
 

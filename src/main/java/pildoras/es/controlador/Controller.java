@@ -35,6 +35,13 @@ public class Controller {
 
 /*****************************************************************************/
 
+    @RequestMapping("/insertRunnerURL")
+    public String showAddRunnerForm (Model theModel){
+
+
+        return "insert_runners_page"; // este es el archivo JSP que debe devolver
+    }
+
 /*****************************************************************************/
 
 /*****************************************************************************/
