@@ -31,10 +31,18 @@
             <th>DNI</th>
             <th>Tiempo</th>
 
+            <!-- Columna de Modificar/update -->
+            <th>Modificar</th>
+
 
         </tr>
 
             <c:forEach var="runnersTEMP" items="${runnersAttribute}">
+
+                <c:url var="linkUpdateRunner" value="/runnersURL/showUpdateURL"> <!-- a esta url le tenemos que pasar el id -->
+
+                    <c:param name="runnerID" value="${runnersTEMP.id}"/>
+                </c:url>
 
                 <tr>
 
@@ -43,6 +51,8 @@
                         <td>${runnersTEMP.email}</td>
                         <td>${runnersTEMP.dni}</td>
                         <td>${runnersTEMP.tiempo}</td>
+
+                        <td><a href="${linkUpdateRunner}"><input type="button" value="Modificar"/></a> </td>
 
 
                 </tr>
