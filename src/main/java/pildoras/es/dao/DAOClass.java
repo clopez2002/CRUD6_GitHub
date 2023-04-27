@@ -56,7 +56,9 @@ public class DAOClass implements DAO{
 
         // insertar el runner
 
-        mySession.save(theRunner);
+        //mySession.save(theRunner);
+
+        mySession.saveOrUpdate(theRunner);
 
 
     }
