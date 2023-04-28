@@ -83,6 +83,24 @@ public class DAOClass implements DAO{
 
 /*****************************************************************************/
 
+    @Override
+    @Transactional
+    public void deleteRunner(int id) {
+
+        // obtener la sesion
+
+        Session mySession = sessionFactory.getCurrentSession();
+
+        // eliminar el runner dela bbdd usando el id como criterio
+
+        javax.persistence.Query consulta = mySession.createQuery("delete from Runner where id=:IdDelRunner");
+
+        consulta.setParameter("IdDelRunner", id);
+
+        consulta.executeUpdate();
+
+    }
+
 /*****************************************************************************/
 
 /*****************************************************************************/

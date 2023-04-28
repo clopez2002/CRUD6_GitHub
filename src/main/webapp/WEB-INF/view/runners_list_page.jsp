@@ -34,15 +34,25 @@
             <!-- Columna de Modificar/update -->
             <th>Modificar</th>
 
+            <!-- Columna de Eliminar -->
+            <th>Eliminar</th>
+
 
         </tr>
 
             <c:forEach var="runnersTEMP" items="${runnersAttribute}">
 
+                <!-- Este c:url es para MODIFICAR-->
                 <c:url var="linkUpdateRunner" value="/runnersURL/showUpdateURL"> <!-- a esta url le tenemos que pasar el id -->
-
                     <c:param name="runnerIDParam" value="${runnersTEMP.id}"/>
                 </c:url>
+
+
+                <!-- Este c:url es para ELIMINAR-->
+                <c:url var="linkDeleteRunner" value="/runnersURL/showDeleteURL"> <!-- a esta url le tenemos que pasar el id -->
+                    <c:param name="runnerIDParam" value="${runnersTEMP.id}"/>
+                </c:url>
+
 
                 <tr>
 
@@ -53,6 +63,10 @@
                         <td>${runnersTEMP.tiempo}</td>
 
                         <td><a href="${linkUpdateRunner}"><input type="button" value="Modificar"/></a> </td>
+
+                        <!-- Aca ponemos los botones eliminar en cada fila -->
+
+                        <td><a href="${linkDeleteRunner}"><input type="button" value="Eliminar" onclick="if(!(confirm('Desea eliminar definitivamente el Runner?'))) return false"/></a> </td>
 
 
                 </tr>
@@ -66,6 +80,10 @@
     <!-- La siguiente linea construye un boton, y nos indica el archivo donde se vana insertar los nuevos corredores-->
 
     <input type="button" value="Insert Runner" onclick="window.location.href='insertRunnerURL'; return false"/> <!-- redirigirnos a la pagina jsp con el formulario -->
+
+
+
+
 
 </body>
 </html>

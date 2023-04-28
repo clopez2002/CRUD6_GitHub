@@ -79,6 +79,18 @@ public class Controller {
 
 /*****************************************************************************/
 
+    @GetMapping("/showDeleteURL")
+    public String showDeleteRunnerForm (@RequestParam("runnerIDParam") int id) {
+
+        // eliminar cliente
+
+        daoClient.deleteRunner (id);
+
+        // redireccionamos a la lista de runners
+
+        return "redirect:/runnersURL/runnersListURL";
+    }
+
 
 /*****************************************************************************/
 
